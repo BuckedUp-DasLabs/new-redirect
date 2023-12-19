@@ -19,11 +19,7 @@ const setDataLayer = ({ event, action, value, currency }) => {
 const setKlaviyo = (name, item) => {
   const currentTime = new Date();
   try {
-    klaviyo.push([
-      "track",
-      name,
-      { ...obj, ...item, pagepath: window.location.pathname, pageurl: window.location.href, time: currentTime.getTime() },
-    ]);
+    klaviyo.push(["track", name, { ...obj, ...item, pagepath: window.location.pathname, pageurl: window.location.href, time: currentTime.getTime() }]);
   } catch (err) {
     console.log("failed klaviyo\n", err);
   }
@@ -32,7 +28,9 @@ const setKlaviyo = (name, item) => {
 const dataLayerStart = () => {
   const item = { event: "pageview", action: "load", value: 0 };
   setDataLayer(item);
-  setKlaviyo("Page View", item);
+  setTimeout(() => {
+    setKlaviyo("Page View", item);
+  }, 200);
 };
 
 const dataLayerNoThanks = () => {
