@@ -26,5 +26,5 @@
   document.cookie = `page_id=${page_id}; path=/; domain=.buckedup.com;max-age=3600`;
   if (isFirstPage) localStorage.setItem("first_page", origin);
 </script>
-<script src="https://cdn.jsdelivr.net/gh/BuckedUp-DasLabs/new-redirect@latest/script.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/BuckedUp-DasLabs/new-redirect@latest/script.js"></script>
 ```
