@@ -1,3 +1,7 @@
+const urlParams = new URLSearchParams(window.location.search);
+
+const order_uuid = urlParams.get("order_uuid");
+
 const obj = {
   step_count: step_count,
   page_id: page_id,
@@ -12,6 +16,7 @@ const setDataLayer = ({ event, action, value, currency }) => {
     action: action,
     value: value,
     currency: currency,
+    country: country || "us",
     transaction_id: order_uuid,
   });
 };
