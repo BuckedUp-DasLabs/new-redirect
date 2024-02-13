@@ -9,9 +9,9 @@
   const version_id = "";
   const country = null;
   const urlParamsCookies = ["click_id","utm_source","utm_medium","utm_campaign","utm_term","utm_content"]
+  const discountCode = "";
 
-
-  const params = { exemple: "exempleValue" };
+  const params = { cc: discountCode };
   for (let key in params) {
     urlParams.set(key, params[key]);
   }
@@ -24,7 +24,7 @@
   //stop here.
   const origin = window.location.pathname.replace("/", "").replace("/", "");
   const cookieConfig = "path=/; domain=.buckedup.com;max-age=3600"
-  document.cookie = `offer_id=${origin};${cookieConfig}`;
+  document.cookie = `offer_id=${discountCode};${cookieConfig}`;
   document.cookie = `page_id=${page_id};${cookieConfig}`;
   urlParamsCookies.forEach(param=>{
     document.cookie = `${param}=${urlParams.get(param)};${cookieConfig}`;
